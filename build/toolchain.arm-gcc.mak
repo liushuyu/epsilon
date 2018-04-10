@@ -8,7 +8,7 @@ SIZE = arm-none-eabi-size
 ifeq ($(DEBUG),1)
 SFLAGS += -ggdb3
 else
-SFLAGS += -fdata-sections -ffunction-sections
-LDFLAGS += -Wl,--gc-sections
+SFLAGS += -fdata-sections -ffunction-sections -flto
+LDFLAGS += -Xlinker --gc-sections -flto -fwhole-program
 endif
 SFLAGS += -mthumb -march=armv7e-m -mfloat-abi=hard -mcpu=cortex-m4 -mfpu=fpv4-sp-d16

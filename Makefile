@@ -53,7 +53,7 @@ $(all_objs): $(generated_headers)
 .SECONDARY: $(objs)
 %.$(EXE): $(objs)
 	@echo "LD      $@"
-	$(Q) $(LD) $^ $(LDFLAGS) -o $@
+	$(Q) $(LD) $(SFLAGS) $^ $(LDFLAGS) -o $@
 
 %.o: %.c
 	@echo "CC      $@"
